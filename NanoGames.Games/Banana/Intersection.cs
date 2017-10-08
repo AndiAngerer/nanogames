@@ -45,7 +45,7 @@ namespace NanoGames.Games.Banana
 
                 if (p21.X == 112 && p22.X == 113 && p21.Y ==104 && p22.Y == 105 && p11.Y > 104)
                 {
-                    var a = 1;
+                    
                 }
 
                 if ((Math.Min(p11.X, p12.X) <= Point.X + epsilon) && (Math.Max(p11.X, p12.X) >= Point.X - epsilon) &&

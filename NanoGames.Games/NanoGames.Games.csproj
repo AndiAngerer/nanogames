@@ -47,6 +47,13 @@
     <Compile Include="..\NanoGames.Core\Properties\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="BananaOrbit\BananaOrbitMatch.cs" />
+    <Compile Include="BananaOrbit\BananaOrbitPlayer.cs" />
+    <Compile Include="BananaOrbit\Constants.cs" />
+    <Compile Include="BananaOrbit\ConvexPolygon.cs" />
+    <Compile Include="BananaOrbit\Polygon.cs" />
+    <Compile Include="BananaOrbit\Segment.cs" />
+    <Compile Include="BananaOrbit\Voronoi.cs" />
     <Compile Include="Banana\AudioSettings.cs" />
     <Compile Include="Banana\BananaMatch.cs" />
     <Compile Include="Banana\BananaPlayer.cs" />
@@ -117,7 +124,6 @@
   <ItemGroup>
     <Content Include="Banana\tmpcode.txt" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

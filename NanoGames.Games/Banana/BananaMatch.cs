@@ -10,12 +10,10 @@ using System.Threading.Tasks;
 
 /*
 ToDo:
-
     Anzeige: near miss
     verschiedene modi: suddenddeath
     töne
     mappool oder random maps
- 
 */
 
 namespace NanoGames.Games.Banana
@@ -35,6 +33,7 @@ namespace NanoGames.Games.Banana
         public AudioSettings MatchAudioSettings = new AudioSettings();
 
         private int finishedPlayers = 0;
+        private bool somethingFlying = false;
 
         protected override void Initialize()
         {
@@ -56,7 +55,6 @@ namespace NanoGames.Games.Banana
 
         protected override void Update()
         {
-
             switch (StateOfGame)
             {
                 case "NextPlayer":
@@ -103,7 +101,7 @@ namespace NanoGames.Games.Banana
                 case "SomethingFlying":
                     
                     // player falling/flying
-                    bool somethingFlying = false;
+                    somethingFlying = false;
 
                     foreach (var player in Players)
                     {
@@ -142,7 +140,6 @@ namespace NanoGames.Games.Banana
                     }
 
                     break;
-
             }
 
             if ((FramesLeft == 300) ||
@@ -160,7 +157,7 @@ namespace NanoGames.Games.Banana
 
             FramesLeft--;
             
-            if (FramesLeft <= 0)
+            if (FramesLeft <= 0 && !somethingFlying)
             {
                 StateOfGame = "NextPlayer";
             }
@@ -214,8 +211,8 @@ namespace NanoGames.Games.Banana
                     {
                         MatchAudioSettings.BulletExploded = true;
                         Bullet.IsExploded = true;
-                        Land.makeCaldera(intersection.Point, 3);
-                        player.Health -= 40;
+                        Land.makeCaldera(intersection.Point, 8);
+                        player.Health -= 50;
 
                         foreach (var playerB in Players)
                         {
@@ -241,7 +238,7 @@ namespace NanoGames.Games.Banana
                     {
                         MatchAudioSettings.BulletExploded = true;
                         Bullet.IsExploded = true;
-                        Land.makeCaldera(intersection.Point, 3);
+                        Land.makeCaldera(intersection.Point, 8);
 
                         foreach (var player in Players)
                         {
@@ -323,7 +320,7 @@ namespace NanoGames.Games.Banana
         {
             if (Grenade.IsExploded)
             {
-                Land.makeCaldera(Grenade.Position, 5);
+                Land.makeCaldera(Grenade.Position, 15);
                 MatchAudioSettings.GrenadeExploded = true;
 
                 foreach (var player in Players)
@@ -331,20 +328,20 @@ namespace NanoGames.Games.Banana
                     double damage = 0;
                     double dist = (player.Position - Grenade.Position).Length;
 
-                    if (dist < 5)
+                    if (dist <= 5)
                     {
-                        damage = 60;
+                        damage = 75;
                     } 
-                    if ((dist >= 5) && (dist < 15))
-                    {
-                        damage = -6 * dist + 90;
-                    }
 
+                    if ((dist > 5) && (dist <= 17))
+                    {
+                        damage = -6 * dist + 105;
+                    }
+                    
                     player.Health -= damage;
 
                     CheckIfPlayerIsFalling(player);
                     RecalculatePlayerPositionIndex(player);
-
                 }
             }
         }

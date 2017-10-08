@@ -1,0 +1,9 @@
+diff a/NanoGames.Games/NanoGames.Games.csproj b/NanoGames.Games/NanoGames.Games.csproj	(rejected hunks)
+@@ -82,7 +82,6 @@
+     <Compile Include="Discipline.cs" />
+     <Compile Include="DisciplineDirectory.cs" />
+     <Compile Include="Discipline{TMatch,TPlayer}.cs" />
+-    <Compile Include="KartRace\KartPlayer.cs" />
+     <Compile Include="NanoSoccer\Ball.cs" />
+     <Compile Include="NanoSoccer\Circle.cs" />
+     <Compile Include="NanoSoccer\Field.cs" />

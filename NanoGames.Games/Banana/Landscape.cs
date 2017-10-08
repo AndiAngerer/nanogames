@@ -3,9 +3,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NanoGames.Games.Banana
 {
@@ -174,7 +171,7 @@ namespace NanoGames.Games.Banana
                 {
                     if ((position - new Vector(i, j)).Length <= size)
                     {
-                        if ((i >= 0) && (i <= 320) && (j >= 0) || (j <= 200))
+                        if ((i >= 0) && (i <= 320) && (j >= 0) && (j <= 200))
                         {
                             IsSolid[i, j] = false;
                         }
