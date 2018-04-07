@@ -13,7 +13,7 @@ namespace NanoGames.Games.AsteroidHunt
             double size = Choose(match.Random.NextDouble(), Constants.Simploid.MinSize, Constants.Simploid.MaxSize);
             double random = match.Random.NextDouble();
             double randomPow2 = random * random;
-            Vector velocity = new Vector((randomPow2 * -0.25) * 2, Choose(match.Random.NextDouble(), Constants.Simploid.MinVelocity, Constants.Simploid.MaxVelocity));
+            Vector velocity = new Vector((randomPow2 -0.25) * 2, Choose(match.Random.NextDouble(), Constants.Simploid.MinVelocity, Constants.Simploid.MaxVelocity));
 
             Match = match;
             Color = color;
