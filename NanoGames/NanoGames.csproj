@@ -188,6 +188,10 @@
       <Project>{858c767f-35f8-434c-ae91-d1c453820d23}</Project>
       <Name>NanoGames.Network</Name>
     </ProjectReference>
+    <ProjectReference Include="..\NanoGames.Physics\NanoGames.Physics.csproj">
+      <Project>{c3ec57c5-c29d-4667-ba88-e4232d7cea30}</Project>
+      <Name>NanoGames.Physics</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

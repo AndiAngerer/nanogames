@@ -191,6 +191,10 @@
       <Project>{be63934a-7c7f-45b4-ba4e-65ce906e5efe}</Project>
       <Name>NanoGames.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\NanoGames.Physics\NanoGames.Physics.csproj">
+      <Project>{c3ec57c5-c29d-4667-ba88-e4232d7cea30}</Project>
+      <Name>NanoGames.Physics</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Banana\tmpcode.txt" />
